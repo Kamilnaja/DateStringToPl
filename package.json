@@ -1,0 +1,14 @@
+{
+    "name": "polishDateFormats",
+    "version": "0.0.1",
+    "description": "no",
+    "main": "index.js",
+    "files": [
+        "index.js"
+    ],
+    "keywords": [
+        "date"
+    ],
+    "author": "Kamil Naja",
+    "devDependencies": {}
+}
