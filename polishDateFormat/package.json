@@ -1,10 +1,10 @@
 {
-    "name": "polishDateFormats",
+    "name": "polishDateFormat",
     "version": "0.0.1",
     "description": "no",
     "main": "index.js",
     "files": [
-        "index.js"
+      "index.js"
     ],
     "keywords": [
         "date"
