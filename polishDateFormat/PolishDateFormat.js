@@ -1,23 +1,29 @@
 'use strict';
 
 /** this application, should get date and returns date in polish languate format.
+ * @param givenDate - date to parse
  */
 
 module.exports = class PolishDateFormat {
-    parseDate(givenDate) {
-
-        let polishDays = ["poniedzialek", "wtorek", "środa", "czwartek", "piątek", "sobota", "niedziela"];
-
-        let polishMonths = ["styczeń", "luty", "marzec", "kwiecień", "maj", "czerwiec", "lipiec", "sierpień", "wrzesień", "październik", "listopad", "grudzień"];
-
-        return this.getPolishDay(givenDate, polishDays);
+    constructor() {
+        this.dateInPolishFormat = "";
+        this.polishDays = ["poniedziałek", "wtorek", "środa", "czwartek", "piątek", "sobota", "niedziela"];
+        this.englishDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+        this.polishMonths = ["styczeń", "luty", "marzec", "kwiecień", "maj", "czerwiec", "lipiec", "sierpień", "wrzesień", "październik", "listopad", "grudzień"];
     }
 
-    getPolishDay(givenDate, polishDays) {
-        let englishDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-        let englishDay = givenDate.substring(0, givenDate.indexOf(" "));
+    getDateInPolishFormat() {
+        return this.dateInPolishFormat;
+    }
 
-        let englishDayIndex = englishDays.indexOf(englishDay);
-        return polishDays[englishDayIndex];
+    setDateInPolishFormat(date) {
+        this.dateInPolishFormat = date;
+    }
+
+    parseDate(givenDate) {
+        let englishDay = givenDate.substring(0, givenDate.indexOf(" "));
+        let englishDayIndex = this.englishDays.indexOf(englishDay);
+        this.dateInPolishFormat = this.polishDays[englishDayIndex];
+        return this.getDateInPolishFormat();
     }
 };
